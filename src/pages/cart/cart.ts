@@ -19,18 +19,19 @@ import { FormsModule } from "@angular/forms";
 export class CartPage {
   myCart = new Array();
   isSelecteds = false;
+  url = "http://localhost:8080/"
   constructor(
     public myHttp: HttpClient,
     public navCtrl: NavController,
     public navParams: NavParams
-  ) {}
+  ) { }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad CartPage");
   }
   ionViewWillEnter() {
     //请求购物车列表
-    var url = "http://localhost:8080/cart/list";
+    var url = this.url + "cart/list";
     this.myHttp.get(url, { withCredentials: true }).subscribe((result: any) => {
       if (result.code == 300) {
         this.navCtrl.push(LoginPage);
@@ -54,6 +55,17 @@ export class CartPage {
       for (var i = 0; i < this.myCart.length; i++) {
         this.myCart[i].isSlected = false;
       }
+    }
+  }
+  //商品数量++
+  onClickAdd(count) {
+    console.log(count)
+    this.myCart[count].count += 1;
+  }
+  //商品数量--
+  onClickAjj(count) {
+    if (this.myCart[count].count > 1) {
+      this.myCart[count].count -= 1;
     }
   }
   //操作了购物车列表
@@ -86,5 +98,16 @@ export class CartPage {
       }
     }
     return totalPrice;
+  }
+  //移除选中商品
+  dleAll() {
+    for (var i = this.myCart.length - 1; i >= 0; i--) {
+      if (this.myCart[i].isSlected) {
+        var url = this.url + "cart/del?iid=" + this.myCart[i].iid
+        this.myCart.splice(i, 1)
+        this.myHttp.get(url, { withCredentials: true }).subscribe((result: any) => {
+        })
+      }
+    }
   }
 }

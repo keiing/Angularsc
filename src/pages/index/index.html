@@ -16,24 +16,24 @@
 <ion-content padding>
   <!-- 轮播图列表 -->
   <ion-slides (ionSlideAutoplayStop)="ionViewDidEnter()" style="height:200px;" *ngIf="indeximg.length>0" loop
-    autoplay="2000" pager paginationType="bullets"
-    speed="1500" effect="cube" #slides>
+    autoplay="2000" pager paginationType="bullets" speed="1500" effect="cube" #slides>
     <ion-slide *ngFor="let item of indeximg">
       <img style="width:400px;height: 200px;" [src]="'http://127.0.0.1:8080/'+item.img" alt="">
       {{item.title}}
     </ion-slide>
   </ion-slides>
   <!-- 滑动图列表 -->
-  <ion-scroll scrollX style="height:300px;white-space: nowrap">
-    <ion-card *ngFor="let item of indexscroll" style="display: inline-block;">
-      <ion-card-content>
-        <img style="width:230px;height: 230px;" [src]="'http://127.0.0.1:8080/'+item.pic">
-        <h4>{{item.title}}</h4>
-      </ion-card-content>
+  <ion-scroll scrollX style="height:330px;white-space: nowrap">
+    <ion-card style="bottom:-30px;" *ngFor="let item of indexscroll" style="display: inline-block;">
+      <!-- <ion-card-content> -->
+      <img style="height: 230px;" [navPush]="detail" [navParams]="{id:item.pid}"
+        [src]="'http://127.0.0.1:8080/'+item.pic">
+      <h4 style="text-align: center;">{{item.title}}</h4>
+      <!-- </ion-card-content> -->
     </ion-card>
   </ion-scroll>
   <!-- 推荐商品 -->
-  <h5 style="margin-top:70px;">推荐商品</h5>
+  <h5 style="margin-top:20px;">推荐商品</h5>
   <ion-list>
     <ion-item [navPush]="detail" [navParams]="{id:tem.pid}" *ngFor="let tem of rList;let index=index" text-wrap>
       <ion-thumbnail item-start>
@@ -46,4 +46,8 @@
       </button>
     </ion-item>
   </ion-list>
+  <ion-col>
+
+  </ion-col>
+
 </ion-content>

@@ -34,9 +34,9 @@
             <ion-col>
               <h4>{{item.title}}</h4>
               <p style="color:red">{{item.price|currency:"CNY"}}</p>
-              <button>-</button>
+              <button (click)="onClickAjj(myindex)">-</button>
               <span>{{item.count}}</span>
-              <button>+</button>
+              <button (click)="onClickAdd(myindex)">+</button>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -69,6 +69,11 @@
       全选
       <ion-col>
         本次消费{{calcAll()}}
+      </ion-col>
+      <ion-col>
+        <button (click)="dleAll()">
+          移除
+        </button>
       </ion-col>
       <ion-col>
         <button ion-button block color="danger">付款</button>

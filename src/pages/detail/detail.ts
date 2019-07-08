@@ -28,7 +28,7 @@ export class DetailPage {
     public navParams: NavParams,
     public myHttp: HttpClient,
     private toastCtrl: ToastController
-  ) {}
+  ) { }
 
   ionViewDidLoad() {
     console.log(this.id);

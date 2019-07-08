@@ -22,13 +22,15 @@
     </ion-slide>
   </ion-slides>
   <!-- 标题 -->
-  <h3>{{myTitle}}</h3>
-  <!-- 副标题 -->
-  <h5>{{mySubtitle}}</h5>
-  <!-- 价格 -->
-  <h3 style="color:red">
-    {{myPrice|currency}}
-  </h3>
+  <div class="details-font">
+    <h3>{{myTitle}}</h3>
+    <!-- 副标题 -->
+    <h5>{{mySubtitle}}</h5>
+    <!-- 价格 -->
+    <h3 style="color:red">
+      {{myPrice|currency}}
+    </h3>
+  </div>
   <!-- 固定在脚底效果 -->
   <ion-footer>
     <ion-grid>

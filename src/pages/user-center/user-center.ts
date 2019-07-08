@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { HttpClient } from '@angular/common/http'
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the UserCenterPage page.
@@ -14,12 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'user-center.html',
 })
 export class UserCenterPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  myUser = [];
+  constructor(private myHttp: HttpClient, public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad UserCenterPage');
+    var url = "http://localhost:8080/user/reguser"
+    this.myHttp.get(url, { withCredentials: true }).subscribe((result: any) => {
+      if (result.code == 200) {
+        this.myUser = result.data[0];
+      } else {
+        this.navCtrl.push(LoginPage)
+      }
+    });
   }
 
 }
