@@ -19,6 +19,10 @@ import { OrderConfirmPage } from "../pages/order-confirm/order-confirm";
 import { PayPage } from "../pages/pay/pay";
 import { UserCenterPage } from "../pages/user-center/user-center";
 import { NotFoundPage } from "../pages/not-found/not-found";
+import { GoshowPage } from "../pages/goshow/goshow";
+import { GokeyPage } from "../pages/gokey/gokey";
+import { GofaPage } from "../pages/gofa/gofa";
+import { GodetailPage } from "../pages/godetail/godetail";
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { NotFoundPage } from "../pages/not-found/not-found";
     OrderConfirmPage,
     PayPage,
     UserCenterPage,
-    NotFoundPage
+    NotFoundPage,
+    GoshowPage, //收货页面
+    GokeyPage,//收货付款发货评论总页面
+    GofaPage,//发货页面
+    GodetailPage,//评论页面
   ],
   imports: [
     BrowserModule,
@@ -52,7 +60,11 @@ import { NotFoundPage } from "../pages/not-found/not-found";
     OrderConfirmPage,
     PayPage,
     UserCenterPage,
-    NotFoundPage
+    GoshowPage, //收货页面
+    NotFoundPage,
+    GokeyPage,//收货付款发货评论总页面
+    GofaPage,//发货页面
+    GodetailPage,//评论页面
   ],
   providers: [
     StatusBar,

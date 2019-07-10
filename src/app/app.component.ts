@@ -10,6 +10,10 @@ import { OrderConfirmPage } from "../pages/order-confirm/order-confirm";
 import { PayPage } from "../pages/pay/pay";
 import { DetailPage } from "../pages/detail/detail";
 import { NotFoundPage } from "../pages/not-found/not-found";
+import { GoshowPage } from "../pages/goshow/goshow";
+import { GokeyPage } from "../pages/gokey/gokey";
+import { GofaPage } from "../pages/gofa/gofa";
+import { GodetailPage } from "../pages/godetail/godetail";
 
 @Component({
   templateUrl: "app.html"
@@ -35,7 +39,11 @@ export class MyApp {
       { title: "订单确认", component: OrderConfirmPage },
       { title: "支付", component: PayPage },
       { title: "详情", component: DetailPage },
-      { title: "404", component: NotFoundPage }
+      { title: "404", component: NotFoundPage },
+      { title: "全部", component: GokeyPage },
+      { title: "收货", component: GoshowPage },
+      { title: "发货", component: GofaPage },
+      { title: "评论", component: GodetailPage }
     ];
   }
 

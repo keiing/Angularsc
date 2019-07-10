@@ -62,13 +62,13 @@
           <span> 我的订单</span><span style="color:rgba(33,33,33, 0.6)"> 查看所有订单</span>
         </div>
         <div style="display:flex; justify-content:space-around">
-          <div class="user-align-item">
+          <div (click)="this.handelClickcard()" class="user-align-item">
             <ion-icon style="color:rgba(246, 86, 23, 0.9)" name="appstore"></ion-icon>
             <span>
               待付款
             </span>
           </div>
-          <div class="user-align-item">
+          <div (click)="this.handelClickgoshow()" class="user-align-item">
             <ion-icon style="color:rgba(246, 86, 23, 0.9)" name="chatboxes"></ion-icon>
             <span>
               待收货

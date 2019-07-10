@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http'
 import { LoginPage } from '../login/login';
+import { CartPage } from '../cart/cart'
+import { GoshowPage } from '../goshow/goshow'
 /**
  * Generated class for the UserCenterPage page.
  *
@@ -31,26 +33,29 @@ export class UserCenterPage {
           this.user_name = result.data[0].user_name;
           this.phone = result.data[0].phone;
           this.avatar = result.data[0].avatar;
+        } else {
+          this.navCtrl.push(LoginPage)
         }
       });
     }
   }
   ionViewDidLoad() {
-    var url = "http://localhost:8080/user/reguser"
-    this.myHttp.get(url, { withCredentials: true }).subscribe((result: any) => {
-      if (result.code == 200) {
-        this.myUser = result.data[0];
-        this.user_name = result.data[0].user_name;
-        this.phone = result.data[0].phone;
-        this.avatar = result.data[0].avatar;
-      } else {
-        this.navCtrl.push(LoginPage)
-      }
-    });
+    //myUser如果为空数组则重新执行请求
+    if (!this.myUser) {
+      this.ionViewWillEnter();
+    }
+  }
+  //跳到找支付/购物车页面
+  handelClickcard() {
+    this.navCtrl.push(CartPage)
+  }
+  //跳转到收货页面
+  handelClickgoshow() {
+    console.log(111);
+    // this.navCtrl.push(GoshowPage)
   }
   //进入页面执行
   ionViewDidEnter() {
     console.log(this);
   }
-
 }
