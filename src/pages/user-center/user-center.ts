@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HttpClient } from '@angular/common/http'
 import { LoginPage } from '../login/login';
 import { CartPage } from '../cart/cart'
-import { GoshowPage } from '../goshow/goshow'
+import { GokeyPage } from '../gokey/gokey'
 /**
  * Generated class for the UserCenterPage page.
  *
@@ -52,7 +52,7 @@ export class UserCenterPage {
   //跳转到收货页面
   handelClickgoshow() {
     console.log(111);
-    // this.navCtrl.push(GoshowPage)
+    this.navCtrl.push(GokeyPage)
   }
   //进入页面执行
   ionViewDidEnter() {
