@@ -18,13 +18,23 @@ import { ToastController } from "ionic-angular";
 export class LoginPage {
   uname = "";
   upass = "";
+  typetext = "password"//密码是否显示
+  pepperoni = false//按钮开关
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private myhttp: HttpClient,
     private mytoast: ToastController
-  ) {}
-
+  ) { }
+  //密码是否显示
+  Changechecked() {
+    // console.log(this.pepperoni, this.typetext)
+    if (this.pepperoni === true) {
+      this.typetext = "text"
+    } else {
+      this.typetext = "password";
+    }
+  }
   ionViewDidLoad() {
     console.log("ionViewDidLoad LoginPage");
   }

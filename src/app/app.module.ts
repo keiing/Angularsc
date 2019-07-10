@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { ErrorHandler, NgModule } from "@angular/core";
 import { IonicApp, IonicErrorHandler, IonicModule } from "ionic-angular";
 import { HttpClientModule } from "@angular/common/http";
+//引入双向绑定模块
 import { FormsModule } from "@angular/forms";
 
 import { MyApp } from "./app.component";
@@ -59,4 +60,4 @@ import { NotFoundPage } from "../pages/not-found/not-found";
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

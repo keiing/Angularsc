@@ -23,7 +23,8 @@
       <ion-input placeholder="请输入用户名" [(ngModel)]="uname"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input placeholder="请输入密码" [(ngModel)]="upass"></ion-input>
+      <ion-input [type]="typetext" placeholder="请输入密码" [(ngModel)]="upass"></ion-input>
+     <ion-toggle [(ngModel)]="pepperoni" (ionChange)="this.Changechecked()"></ion-toggle>
     </ion-item>
   </ion-list>
   <!-- 自义定栅格 -->

@@ -1,5 +1,5 @@
 import { Component, ViewChild } from "@angular/core";
-import { IonicPage, NavController, NavParams,Slides } from "ionic-angular";
+import { IonicPage, NavController, NavParams, Slides } from "ionic-angular";
 import { HttpClient } from "@angular/common/http";
 import { DetailPage } from "../detail/detail";
 /**
@@ -24,7 +24,7 @@ export class IndexPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public http: HttpClient
-  ) {}
+  ) { }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad IndexPage");
@@ -40,6 +40,11 @@ export class IndexPage {
   }
   //解决轮播图滑动一次不会继续播放
   ionViewDidEnter() {
-    this.Slides.autoplayDisableOnInteraction = false;
+    //判断状态
+    if (this.Slides !== undefined) {
+      if (this.Slides.autoplayDisableOnInteraction!==undefined){
+        this.Slides.autoplayDisableOnInteraction = false;
+      }
+    }
   }
 }

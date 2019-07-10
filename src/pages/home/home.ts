@@ -21,8 +21,8 @@ export class HomePage {
   myindex = { root: IndexPage, title: "首页" };
   mycart = { root: CartPage, title: "购物车" };
   myUserCenter = { root: UserCenterPage, title: "我的" };
-  myNotFound = { root: NotFoundPage, title: "设置" };
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  myNotFound = { root: NotFoundPage, title: "详情列表" };
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad HomePage");
