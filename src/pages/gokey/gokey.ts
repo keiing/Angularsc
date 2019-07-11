@@ -32,7 +32,10 @@ export class GokeyPage {
     console.log('ionViewDidLoad GokeyPage');
   }
   myselecttrue = (e) => {
-    console.log(this, event);
-    console.log(this)
+    // console.log(this, event);
+    // console.log(this)
+  }
+  backpopprev() {
+    this.navCtrl.pop()
   }
 }

@@ -4,9 +4,9 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-content padding>
-  h2全部
-  <div (click)="myselecttrue()" padding>
+<!-- <ion-content padding> -->
+
+<!-- <div (click)="myselecttrue()" padding>
     <ion-segment [(ngModel)]="pet">
       <ion-segment-button value="gocard">
         代付款
@@ -34,14 +34,9 @@
       ...
     </ion-list>
 
-    <ion-list *ngSwitchCase="'gofa'">
-      <ion-item>
-        <ion-thumbnail item-start>
-        </ion-thumbnail>
-        <h2>Luna</h2>
-      </ion-item>
-      ...
-    </ion-list>
+    <ion-tabs *ngSwitchCase="'gofa'">
+      <ion-tab style="width:100%;height:300px" [root]='mycard' title="购物车"></ion-tab>
+    </ion-tabs>
 
     <ion-list *ngSwitchCase="'goshow'">
       <ion-item>
@@ -60,8 +55,17 @@
       </ion-item>
       ...
     </ion-list>
-  </div>
-</ion-content>
+  </div> -->
+<ion-tabs #myTabs tabsPlacement="top">
+  <span (click)="backpopprev()">返回</span>
+  <!-- <ion-tab [root]="mykey" tabTitle="全部"></ion-tab> -->
+  <ion-tab [root]="mycard" tabTitle="待支付">
+  </ion-tab>
+  <ion-tab [root]="mygofa" tabTitle="待发货"></ion-tab>
+  <ion-tab [root]="myshow" tabTitle="待收货"></ion-tab>
+  <ion-tab [root]="mydetail" tabTitle="待评论"></ion-tab>
+</ion-tabs>
+<!-- </ion-content> -->
 <!--<ion-tabs>
    <ion-tab tabTitle="全部" [root]="mykey">
         </ion-tab>

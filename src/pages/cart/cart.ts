@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { HttpClient } from "@angular/common/http";
 import { LoginPage } from "../login/login";
 import { FormsModule } from "@angular/forms";
+import { UserCenterPage } from '../user-center/user-center'
 
 /**
  * Generated class for the CartPage page.
@@ -28,6 +29,10 @@ export class CartPage {
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad CartPage");
+  }
+  backpopprev() {
+    //返回上一页
+    console.log(this.navCtrl.parent);
   }
   ionViewWillEnter() {
     //请求购物车列表

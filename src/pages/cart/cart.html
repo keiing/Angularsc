@@ -7,9 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>cart</ion-title>
+    <ion-title (click)="backpopprev()">
+      cart
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -59,7 +60,7 @@
     </ion-item-sliding>
   </ion-list> -->
 </ion-content>
-<ion-footer>
+<ion-footer id="footercard">
   <!-- 储存是全选的复选框和去结算的按钮 -->
   <ion-grid>
     <ion-row align-items-center>
