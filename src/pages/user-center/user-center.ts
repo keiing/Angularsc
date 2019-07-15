@@ -33,6 +33,7 @@ export class UserCenterPage {
           this.user_name = result.data[0].user_name;
           this.phone = result.data[0].phone;
           this.avatar = result.data[0].avatar;
+          console.log(this.avatar)
         } else {
           this.navCtrl.push(LoginPage)
         }
